@@ -1,0 +1,152 @@
+<!DOCTYPE html>
+<html lang = "en">
+<head>
+    <meta charset = "UTF-8">
+    <meta http-equiv = "X-UA-Compatible" content = "IE = edge">
+    <meta name = "viewport" content = "width = device-wdith, initial-scale = 1.0">
+    <title>Latent Lamb Portfolio</title>
+    <link rel = "stylesheet" href = "style.css">
+    <script src="https://kit.fontawesome.com/3150d9fea2.js" crossorigin="anonymous"></script>
+</head>
+<body>
+
+<div id = "header">
+    <div class = "container">
+        <nav>
+            <img src = "images/logo.png" class = "logo">
+            <ul>
+                <li><a href = "#">Home</a></li>
+                <li><a href = "#">About</a></li>
+                <li><a href = "#">Services</a></li>
+                <li><a href = "#">Portfolio</a></li>
+                <li><a href = "#">Contact</a></li>
+            </ul>
+        </nav>
+        <div class = "header-text">
+            <p>Young Urban Professional with<br>Pathetic use of Potential.</p>
+            <h1>Hi, I'm <span>Latent Lamb</span><br> I graze in London</h1>
+        </div>
+</div>
+
+<!-- style the page to look like a manga-->
+<!--- about page -->
+<div id="about">
+    <div class="container">
+        <div class="row">
+            <div class="about-col-1">
+                <img src = "images/user.png">
+            </div>
+            <div class="about-col-2">
+                <h1 class="sub-title">About Me</h1>
+                <p1>Building stuff for fun.</p1>
+
+                <div class="tab-title">
+                    <p class="tab-links acitve-link" onclick="opentab('skills')">Skills</p>
+                    <p class="tab-links" onclick="opentab('experience')">Experience</p>
+                    <p class="tab-links" onclick="opentab('education')">Education</p>
+                </div>
+                <div class="tab-contents active-tab" id="skills">
+                    <ul>
+                        <li><span>Sales</span><br>3 years experience in Sales and Account Management</li>
+                        <li><span>Data</span><br>Having Fun</li>
+                        <li><span>Bikes</span><br>8 years as road cyclist, track and mountain biking. </li>
+                    </ul>
+                </div>
+                <div class="tab-contents" id="experience">
+                    <ul>
+                        <li><span>2016</span><br>3 years experience in Sales and Account Management</li>
+                        <li><span>2018</span><br>Having Fun</li>
+                        <li><span>2022</span><br>8 years as road cyclist, track and mountain biking. </li>
+                    </ul>
+                </div>
+                <div class="tab-contents" id="education">
+                    <ul>
+                        <li><span>2017</span><br>Bsc Mathematics</li>
+                        <li><span>2019</span><br>Msc Data Science</li>
+                    </ul>
+                </div>                
+            </div>
+        </div>
+    </div>
+</div>
+
+
+<!--- about page -->
+<div id = "services">
+    <div class= "container">
+        <h1 class= "sub-title">Services</h1>
+        <div class = "services-list">
+            <div>
+                <i class="fa-solid fa-code"></i>
+                <h2>Cycling Training</h2>
+                <p>From coach to being on a bike work. </p>
+                <a href="#">learn more</a>
+            </div>
+            <div>
+                <i class="fa-solid fa-bicycle"></i>
+                <h2>Cycling Training</h2>
+                <p>From coach to being on a bike work. </p>
+                <a href="#">learn more</a>
+            </div>
+            <div>
+                <i class="fa-solid fa-database"></i>
+                <h2>Data Visualisation</h2>
+                <p>From coach to being on a bike work. </p>
+                <a href="#">learn more</a>
+            </div>
+
+        </div>
+    </div>
+</div>
+<!--- portfolio ---->
+<div id="portfolio">
+    <div class = "container">
+        <h1 class= "sub-title">My Work</h1>
+        <div class="work-list">
+            <div class="work">
+                <img src="images/work-1.png" alt="This is an image of my work">
+                <div class="layer">
+                    <h3>Social Media App</h3>
+                    <p>the app connects you the talented people around the world</p>
+                    <a href="#"><i class="fa-solid fa-arrow-up-right-from-square"></i></a>
+                </div>
+            </div>
+            <div class="work">
+                <img src="images/work-2.png" alt="This is an image of my work">
+                <div class="layer">
+                    <h3>Music App</h3>
+                    <p>the app connects you the talented people around the world</p>
+                    <a href="#"><i class="fa-solid fa-arrow-up-right-from-square"></i></a>
+                </div>
+            </div>
+            <div class="work">
+                <img src="images/work-3.png" alt="This is an image of my work">
+                <div class="layer">
+                    <h3>Online Shopping App</h3>
+                    <p>the app connects you the talented people around the world</p>
+                    <a href="#"><i class="fa-solid fa-arrow-up-right-from-square"></i></a>
+                </div>
+            </div>
+        </div>
+        <a href = "#" class = "btn">See more</a>
+    </div>
+</div>
+
+<script>
+    var tablinks = document.getElementsByClassName("tab-links");
+    var tabcontents = document.getElementsByClassName("tab-contents");
+
+    function opentab(tabname){
+        for(tablink of tablinks){
+            tablink.classList.remove("active-link");
+        }
+        for(tabcontent of tabcontents){
+            tabcontent.classList.remove("active-tab");
+        }
+        event.currentTarget.classList.add("active-link");
+        document.getElementById(tabname).classList.add("active-tab")
+    }
+</script>
+    
+</body>
+</html>
