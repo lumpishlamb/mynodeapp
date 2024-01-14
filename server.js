@@ -12,11 +12,22 @@ app.get('/', (req, res) => {
   res.sendFile(path.join(__dirname, 'public', 'index.html'));
 });
 
+app.get('/page1', (req, res) => {
+  res.sendFile(path.join(__dirname, 'public/views', 'page1.html'));
+});
+
+
 // Start the server
 app.listen(port, () => {
   console.log(`Server listening on port ${port}`);
 });
 
 // in lightsail 
+
+// ls  then cd into htdocs
+// rm -rf * to clear everythin
+// git clone <repo-link>
+
+// in case of error where port is used. 
 // sudo netstat -tulpn | grep :3000
 // node server.js
