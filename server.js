@@ -26,9 +26,11 @@ app.listen(port, () => {
 // in lightsail 
 
 // ls  then cd into htdocs
-// rm -rf * to clear everythin
+// g to clear everythin
 // git clone <repo-link>
+// npm instlal 
 
 // in case of error where port is used. 
 // sudo netstat -tulpn | grep :3000
-// node server.js
+// node server.js -- to test
+// forver start server.js -- to go live
