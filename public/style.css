@@ -17,6 +17,16 @@ body{
     background-position: center;
 }
 
+.menu_bar {
+    background-color: #ffff; /* Set the background color */
+}
+
+.header_container{
+    width: 100%;
+    height: auto; /* Adjust as needed */
+    overflow: hidden; /* This can help contain floated elements */
+}
+
 .container{
     padding: 10px 10%;
     width: 100%;
@@ -32,7 +42,10 @@ nav{
     background-color: #0b121b;
 }
 .logo{
-    width: 160px;
+    width: 120px;
+    margin-left: 5%;
+    padding-top: 4px;
+    padding-bottom: 2.5px;
 }
 .logo img{
     display:block;
@@ -57,7 +70,7 @@ nav ul li a::after{
     position: absolute;
     left: 0;
     bottom: -6px;
-    transition: 0.5s;
+    transition: 0.25s;
 }
 nav ul li a:hover::after{
     width: 100%;
@@ -65,6 +78,8 @@ nav ul li a:hover::after{
 }
 .header-text{
     margin-top: 20%;
+    padding: 10px 10%;
+    width: 100%;
     font-size: 30px;    
     color:#fff
 }
@@ -82,7 +97,6 @@ nav ul li a:hover::after{
 
 /*--- about ---*/
 #about{
-    padding: 20px;
     margin-top: 0px;
     height: 70vh;
     color: #ababab;
@@ -98,7 +112,7 @@ nav ul li a:hover::after{
     place-items: center;
 }
 .about-col-1 img{
-    margin-top: 30px;
+    margin-top: 40px;
     width: 40%;
     border-radius: 15px;
     justify-content: center; /* Horizontally center */
@@ -138,7 +152,7 @@ nav ul li a:hover::after{
     position: absolute;
     left: 0;
     bottom: -8px;
-    transition: 0.5s;
+    transition: 0.25s;
 }
 
 .tab-links.active-link::after{
@@ -177,7 +191,7 @@ nav ul li a:hover::after{
     font-size: 13px;
     font-weight: 300;
     border-radius: 10px;
-    transition: background 0.5s, transform 0.5s;
+    transition: background 0.25s, transform 0.25s;
 }
 .services-list div i{
     font-size: 50px;
@@ -222,7 +236,7 @@ nav ul li a:hover::after{
     width: 100%;
     border-radius: 10px;
     display:block;
-    transition: transform 0.5s;
+    transition: transform 0.25s;
 }
 .layer{
     width: 100%;
@@ -240,7 +254,7 @@ nav ul li a:hover::after{
     padding: 0 40px;
     text-align: center;
     font-size: 14px;
-    transition: height 0.5s;
+    transition: height 0.25s;
 }
 .layer h3{
     font-weight: 500;
@@ -274,7 +288,7 @@ nav ul li a:hover::after{
     border-radius: 6px;
     text-decoration: none;
     color: #fff;
-    transition: background 0.5s;
+    transition: background 0.25s;
 }
 .btn:hover{
     background: #e18910;
@@ -318,7 +332,7 @@ nav .fas{
         height: 100vh;
         padding-top: 3.125rem; /* Changed to rem */
         z-index: 2;
-        transition: left 0.5s;
+        transition: left 0.25s;
     }
     nav ul li {
         display: block;
