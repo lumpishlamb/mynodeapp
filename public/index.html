@@ -11,30 +11,30 @@
 </head>
 <body>
 
-<div id = "header">
-    <div class = "container">
-        <nav>
-            <img src = "images/logo.png" class = "logo">
-            <ul id="sidemenu">
-                <li><a href = "#">Home</a></li>
-                <li><a href = "/page1">About</a></li>
-                <li><a href = "#">Socials</a></li>
-                <li><a href = "#">Portfolio</a></li>
-                <i class="fas fa-circle-xmark" onclick="closemenu()"></i> 
-            </ul>
-            <i class="fas fa-bars" onclick="openmenu()"></i>
-        </nav>
-        <div class = "header-text">
-            <p><span>Young Urban Professional with<br> Pathetic use of Potential.</span></p>
-            <h1><span>Hello, I'm <span>Latent Lamb</span><br> I graze in London</h1>
+    <div id="header">
+        <div class="container">
+            <nav>
+                <img src="images/logo.png" class="logo">
+                <ul id="sidemenu">
+                    <li><a href="#">Home</a></li>
+                    <li><a href="/page1">About</a></li>
+                    <li><a href="#">Socials</a></li>
+                    <li><a href="#">Portfolio</a></li>
+                    <i class="fas fa-circle-xmark" onclick="closemenu()"></i>
+                </ul>
+                <i class="fas fa-bars" onclick="openmenu()"></i>
+            </nav>
+            
+            <div class="header-text">
+                <p><span>Young Urban Professional with<br> Pathetic use of Potential.</span></p>
+                <h1><span>A Latent Lamb</span><span> grazing in London</span></h1>
+            </div>
         </div>
     </div>
-</div>
 
 <!--- portfolio ---->
 <div id="portfolio">
     <div class = "container">
-        <h1 class= "sub-title">Portfolio</h1>
         <div class="work-list">
             <div class="work">
                 <img src="images/work-1.png" alt="This is an image of my work">
@@ -65,7 +65,6 @@
     </div>
 </div>
 
-<!-- style the page to look like a manga-->
 <!--- about page -->
 <div id="about">
     <div class="container">
@@ -82,28 +81,25 @@
                 <div class="tab-contents active-tab" id="cycle">
                     Weekend Warrior turned casual cyclist, sorry if I'm causing traffic.
                     <ul>
-                        <li><span>Road</span><br>3 years experience in Sales and Account Management</li>
-                        <li><span>Track</span><br>I ride in circles for fun.</li>
-                        <li><span>MTB</span><br>Once a year MTB rider.</li>
+                        <li><span>Road</span><br>Thousands of miles across England, with a few hundred in Austira and Japan. </li>
+                        <li><span>Track</span><br>Hundreds of miles around Herne Hill Veledrome. I like going in circles.</li>
+                        <li><span>MTB</span><br>Tens of miles around the Forest of Dean, and Swinley. Being between trees is cool.</li>
                     </ul>
                 </div>
                 <div class="tab-contents" id="reading">
                     ereader enthusiast, reducing blue light screen time page by page.              
                     <ul>
-                        <li><span>Manga</span><br>3 years experience in Sales and Account Management</li>
-                        <li><span>Comics</span><br>Having Fun</li>
-                        <li><span>Non-Fiction</span>
-                            <ul>
-                                <li>• The Future of Capitalism (Paul Collier, 2019)</li>
-                                <li>• The Power of Now (Eckhart Tolle, 1999)</li> 
-                            </ul>
-                            <br>Politics, Philosophy</li>
+                        <li><span>Manga</span><br>Recently finished Assassination Classroom, collecting Spy x Family, and started Sentai Daishikkaku.</li>
+                        <li><span>Comics</span><br>When Marvel Movies don't hit the mark anymore I go back to the Comics. Reading anything X-Men.</li>
+                        <li><span>Non-Fiction</span><br>When fiction isn't enough.</li>
                     </ul>
                 </div>
                 <div class="tab-contents" id="pokemongo">
+                    Living the childhood dream of becoming a Pokemon Trainer. 
                     <ul>
-                        <li><span>2017</span><br>Team Mystic</li>
-                        <li><span>2019</span><br>Msc Data Science</li>
+                        <li><span>Level 45</span><br>Playing since 2016 on and off. Auto-catching on my commute.</li>
+                        <li><span>Shiny Shadow Hunter</span><br>Currently rescued 10 from Team Rocket. My favourite is my Salamance.</li>
+                        <li><span>Shiny Hundo Hunter</span><br>Venusaur, Walrein and Vikavolt</li>                        
                     </ul>
                 </div>                
             </div>
@@ -113,11 +109,11 @@
         </div>
     </div>
 </div>
-
-<!--- about page -->
+<hr class="white-line">
+<!--- socials page -->
 <div id = "services">
     <div class= "container">
-        <h1 class= "sub-title">Socials</h1>
+        <h6 class= "sub-sub-title">Socials</h6>
         <div class = "services-list">
             <div>
                 <a href="https://github.com/lumpishlamb"><i class="fa-brands fa-github"></i><span> : Github</span></a>
@@ -152,7 +148,7 @@
             tabcontent.classList.remove("active-tab");
         }
         event.currentTarget.classList.add("active-link");
-        document.getElementById(tabname).classList.add("active-tab")
+        document.getElementById(tabname).classList.add("active-tab");
     }
 </script>
     
