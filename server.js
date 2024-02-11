@@ -33,4 +33,4 @@ app.listen(port, () => {
 // in case of error where port is used. 
 // sudo netstat -tulpn | grep :3000
 // node server.js -- to test
-// forver start server.js -- to go live
+// f -- to go live
