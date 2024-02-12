@@ -353,7 +353,7 @@ nav .fas{
     }
     #about {
         padding-top: 0.625em;
-        height: 150vh;
+        height: auto;
         color: #ababab;
         background-color: #232f3e;
         width: 90%; /* Adjust the width as needed */
