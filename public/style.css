@@ -124,6 +124,7 @@ nav ul li a:hover::after{
 .about-col-1 img{
     margin-top: 50px;
     width: 40%;
+    margin-left: 160%;
     border-radius: 15px;
     justify-content: center; /* Horizontally center */
     align-items: center; /* Vertically center */
@@ -374,7 +375,6 @@ nav .fas{
     }
     .about-col-1 img {
         width: 100%;
-        margin-left: 110px;
         max-width: 100%; /* Ensure the image does not exceed its container's width */
         border-radius: 15px;
         height: auto; /* Maintain aspect ratio */
