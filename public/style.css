@@ -112,6 +112,7 @@ nav ul li a:hover::after{
     color: #ababab;
     background-color: #232f3e;
 }
+
 .row{
     display: flex;
     justify-content: space-between;
@@ -124,11 +125,6 @@ nav ul li a:hover::after{
 .about-col-1 img{
     margin-top: 50px;
     width: 40%;
-    margin-left: 160%;
-    border-radius: 15px;
-    justify-content: center; /* Horizontally center */
-    align-items: center; /* Vertically center */
-    height: auto; /* Maintain aspect ratio */   
 }
 .about-col-2{
     flex-basis: 60%;
@@ -357,27 +353,25 @@ nav .fas{
         height: auto;
         color: #ababab;
         background-color: #232f3e;
-        width: 90%; /* Adjust the width as needed */
+        width: 100%; /* Adjust the width as needed */
         margin: 0 auto; /* Center the element horizontally */
-    }
-    .about-col-2 {
-        width: 100%; /* Ensure the text container takes full width */
     }
     .row{
         display: flex;
         justify-content: space-between;
         flex-wrap: wrap;
     }
-    .about-col-1 {
-        display: flex; /* Use flexbox */
-        justify-content: center; /* Horizontally center */
-        align-items: center; /* Vertically center */
+    .about-col-1{
+        flex-basis: 35%;
+        place-items: center;
     }
-    .about-col-1 img {
-        width: 100%;
-        max-width: 100%; /* Ensure the image does not exceed its container's width */
-        border-radius: 15px;
-        height: auto; /* Maintain aspect ratio */
+    .about-col-1 img{
+        width:100%;
+        margin-top: 20px;
+        margin-left: 90%; 
+    }
+    .about-col-2 p1 {
+        font-size: 12px; /* Adjust the font size as needed */
     }
     .tab-title{
         margin-top: 30px;
@@ -400,7 +394,3 @@ nav .fas{
     .tab-contents ul li{
         font-size:11px;
     }
-    .about-col-2 p1 {
-        font-size: 12px; /* Adjust the font size as needed */
-    }
-    
