@@ -192,17 +192,17 @@ nav ul li a:hover::after{
 .services-list div{
     background: #262626;
     padding: 20px;
-    font-size: 13px;
+    font-size: 12px;
     font-weight: 300;
     border-radius: 10px;
     transition: background 0.25s, transform 0.25s;
 }
 .services-list div i{
-    font-size: 50px;
-    margin-bottom: 25px;
+    font-size: 20px;
+    margin-bottom: 10px;
 }
 .services-list div span{
-    font-size: 30px;
+    font-size: 20px;
     font-weight: 500;
     margin-bottom: 5px;
 }
@@ -374,6 +374,7 @@ nav .fas{
     }
     .about-col-1 img {
         width: 100%;
+        margin-left: 110px;
         max-width: 100%; /* Ensure the image does not exceed its container's width */
         border-radius: 15px;
         height: auto; /* Maintain aspect ratio */
