@@ -351,11 +351,16 @@ nav .fas{
     .sub-title {
         font-size: 2.5rem; /* Changed to rem */
     }
-    #about{
+    #about {
         padding-top: 0.625em;
         height: 150vh;
         color: #ababab;
         background-color: #232f3e;
+        width: 90%; /* Adjust the width as needed */
+        margin: 0 auto; /* Center the element horizontally */
+    }
+    .about-col-2 {
+        width: 100%; /* Ensure the text container takes full width */
     }
     .row{
         display: flex;
@@ -367,10 +372,34 @@ nav .fas{
         justify-content: center; /* Horizontally center */
         align-items: center; /* Vertically center */
     }
-    
     .about-col-1 img {
         width: 100%;
         max-width: 100%; /* Ensure the image does not exceed its container's width */
         border-radius: 15px;
         height: auto; /* Maintain aspect ratio */
     }
+    .tab-title{
+        margin-top: 30px;
+        margin-bottom: 20px;
+    }
+    .tab-links{
+        margin-right: 10px;
+        font-size: 15px;
+        font-weight: bold;
+        cursor: pointer;
+        position: relative;
+    }
+    .tab-contents ul li{
+        list-style: none;
+        margin: 10px 0;
+    }
+    .tab-contents ul li span{
+        font-size:12px;
+    }
+    .tab-contents ul li{
+        font-size:11px;
+    }
+    .about-col-2 p1 {
+        font-size: 12px; /* Adjust the font size as needed */
+    }
+    
