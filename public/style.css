@@ -37,20 +37,14 @@ nav{
     background-color: #232f3f;
 }
 
-#sidemenu {
-    height: 30px; /* Adjust the height as needed */
-}
-
 #sidemenu li {
     vertical-align: center;
-    height: 25%; /* Adjust the height of each menu item */
+    height: 0%; /* Adjust the height of each menu item */
 }
-
 #sidemenu li a {
     font-size: 11px;
     color: #ffffff; /* Adjust the text color as needed */
 }
-
 .logo{
     width: 120px;
     margin-left: 2.5%;
@@ -84,7 +78,6 @@ nav ul li a::after{
 }
 nav ul li a:hover::after{
     width: 100%;
-
 }
 .header-text{
     margin-top: 20%;
@@ -112,7 +105,6 @@ nav ul li a:hover::after{
     color: #ababab;
     background-color: #232f3e;
 }
-
 .row{
     display: flex;
     justify-content: space-between;
@@ -155,14 +147,12 @@ nav ul li a:hover::after{
     bottom: -8px;
     transition: 0.25s;
 }
-
 .tab-links.active-link::after{
     width: 50%;
 }
 .tab-contents ul li{
     list-style: none;
     margin: 20px 0;
-
 }
 .tab-contents ul li span{
     color: #febd6a;
@@ -312,6 +302,7 @@ nav ul li a:hover::after{
     background-color: rgba(0, 0, 0, 0.5); /* Semi-transparent black */
     z-index: 1; /* Ensure the overlay is above everything else */
     display: none; /* Initially hidden */
+    transition: background-color 0.3s ease; /* Smooth transition effect */
 }
 
 /*--- css for mobile screens --*/
@@ -321,6 +312,7 @@ nav .fas{
 @media only screen and (max-width: 600px) {
     #sidemenu {
         height: 100%; /* Adjust the height as needed */
+        width:130px;
     }
     #sidemenu li {
         margin-top: 2px;
