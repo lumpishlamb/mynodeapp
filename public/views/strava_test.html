@@ -29,59 +29,77 @@
         <i class="fas fa-bars" onclick="openmenu()"></i>
     </nav>
 
-    <head>
-        <meta charset="UTF-8">
-        <meta name="viewport" content="width=device-width, initial-scale=1.0">
-        <title>D3 Map Visualization</title>
-        <script src="https://d3js.org/d3.v7.min.js"></script>
-        <style>
-            /* Define CSS styles for the map */
-            svg {
-                background-color: #f0f0f0;
-            }
-            .point {
-                fill: steelblue;
-                stroke: #fff;
-                stroke-width: 1.5px;
-            }
-        </style>
-    </head>
-    <body>
-        <svg id="map"></svg>
-    
-        <script>
-            // Function to set SVG width based on window size
-            function setSVGWidth() {
-                var svg = d3.select("#map");
-                var width = window.innerWidth; // Get window width
-                svg.attr("width", width); // Set SVG width to window width
-            }
-    
-            // Call the function initially and on window resize
-            setSVGWidth();
-            window.addEventListener("resize", setSVGWidth);
-    
-            // Load CSV data
-            d3.csv("../data/strava_ride_details.csv").then(function(data) {
-                // Define projection
-                var projection = d3.geoMercator()
-                    .center([0, 0]) // Center the map
-                    .scale(100) // Adjust the scale as needed
-                    .translate([width / 2, 300]); // Translate to center of SVG element
-    
-                // Plot data points
-                var svg = d3.select("#map");
-    
-                svg.selectAll(".point")
-                    .data(data)
-                    .enter().append("circle")
-                    .attr("class", "point")
-                    .attr("cx", function(d) { return projection([+d.lng, +d.lat])[0]; })
-                    .attr("cy", function(d) { return projection([+d.lng, +d.lat])[1]; })
-                    .attr("r", 5); // Adjust circle radius as needed
-            });
-        </script>
-    </body>
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>D3 Map Visualization</title>
+    <script src="https://d3js.org/d3.v7.min.js"></script>
+    <style>
+        /* Define CSS styles for the map */
+        svg {
+            background-color: #f0f0f0;
+        }
+        .point {
+            fill: steelblue;
+            stroke: #fff;
+            stroke-width: 1.5px;
+        }
+    </style>
+</head>
+
+<body>
+    <svg width="960" height="600"></svg>
+
+    <script>
+        // Load CSV data
+        d3.csv("../data/strava_ride_details.csv").then(function(data) {
+            // Define projection
+            var projection = d3.geoMercator()
+                .center([0, 0]) // Center the map
+                .scale(100) // Adjust the scale as needed
+                .translate([480, 300]); // Translate to center of SVG element
+
+            // Create SVG element
+            var svg = d3.select("svg");
+
+            // Plot data points
+            svg.selectAll(".point")
+                .data(data)
+                .enter().append("circle")
+                .attr("class", "point")
+                .attr("cx", function(d) { return projection([d.lng, d.lat])[0]; })
+                .attr("cy", function(d) { return projection([d.lng, d.lat])[1]; })
+                .attr("r", 5) // Adjust circle radius as needed
+                .append("title")
+                .text(function(d) { return "Name: " + d.name + "\nTime: " + d.time + "\nAltitude: " + d.altitude; });
+        });
+    </script>
+</body>
+
+<!--- socials page -->
+<div id = "services">
+    <div class= "container">
+        <div class = "services-list">
+            <div>
+                <a href="https://github.com/lumpishlamb"><i class="fa-brands fa-github"></i><span> : Github</span></a>
+                <p>I upload code via the GitHub GUI.</p>
+            </div>
+            <div>
+                <a href="https://www.linkedin.com/in/lam-%F0%9F%8D%83-0b5bb2150/"><i class="fa-brands fa-linkedin-in"></i><span> : LinkedIn</span></a>
+                <p>Endorse for endorse?</p>
+            </div>
+            <div>
+                <a href="https://www.strava.com/athletes/1278599"><i class="fa-brands fa-strava"></i><span> : Strava</span></a>
+                <p>Watch me ride my bike</p>
+            </div>
+            <div>
+                <a href="https://www.instagram.com/latentlamb/"><i class="fa-brands fa-instagram"></i><span> : Instagram</span></a>
+                <p>I won't follow you back.</p>
+            </div>            
+
+        </div>
+    </div>
+</div>
     
 <script>
     var sidemenu = document.getElementById("sidemenu");
