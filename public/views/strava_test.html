@@ -1,0 +1,104 @@
+<!DOCTYPE html>
+<html lang = "en">
+<head>
+    <meta charset = "UTF-8">
+    <meta http-equiv = "X-UA-Compatible" content = "IE = edge">
+    <link rel="icon" type="../image/png" href="../images/favicon.png">
+    <meta name = "viewport" content = "width = device-wdith, initial-scale = 1.0">
+    <title>Latent Lamb</title>
+    <link rel = "stylesheet" href = "../style.css">
+    <script src="https://kit.fontawesome.com/3150d9fea2.js" crossorigin="anonymous"></script>
+</head>
+<body>
+
+<!--- top of page content -->
+<div class="header_container">
+    <img src="../images/logo.png" class="logo">
+</div>
+<div id="overlay"></div>
+    <nav>
+        <ul id="sidemenu">
+            <li> </li>
+            <li> </li>
+            <li><a href="../index">Home</a></li>
+            <li><a href="../strava_test">Portfolio</a></li>
+            <li><a href="../page1">About</a></li>
+            <li><a href="#">Socials</a></li>
+            <i class="fas fa-circle-xmark" onclick="closemenu()"></i>
+        </ul>
+        <i class="fas fa-bars" onclick="openmenu()"></i>
+    </nav>
+
+    <head>
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <title>D3 Map Visualization</title>
+        <script src="https://d3js.org/d3.v7.min.js"></script>
+        <style>
+            /* Define CSS styles for the map */
+            svg {
+                background-color: #f0f0f0;
+            }
+            .point {
+                fill: steelblue;
+                stroke: #fff;
+                stroke-width: 1.5px;
+            }
+        </style>
+    </head>
+    <body>
+        <svg id="map"></svg>
+    
+        <script>
+            // Function to set SVG width based on window size
+            function setSVGWidth() {
+                var svg = d3.select("#map");
+                var width = window.innerWidth; // Get window width
+                svg.attr("width", width); // Set SVG width to window width
+            }
+    
+            // Call the function initially and on window resize
+            setSVGWidth();
+            window.addEventListener("resize", setSVGWidth);
+    
+            // Load CSV data
+            d3.csv("../data/strava_ride_details.csv").then(function(data) {
+                // Define projection
+                var projection = d3.geoMercator()
+                    .center([0, 0]) // Center the map
+                    .scale(100) // Adjust the scale as needed
+                    .translate([width / 2, 300]); // Translate to center of SVG element
+    
+                // Plot data points
+                var svg = d3.select("#map");
+    
+                svg.selectAll(".point")
+                    .data(data)
+                    .enter().append("circle")
+                    .attr("class", "point")
+                    .attr("cx", function(d) { return projection([+d.lng, +d.lat])[0]; })
+                    .attr("cy", function(d) { return projection([+d.lng, +d.lat])[1]; })
+                    .attr("r", 5); // Adjust circle radius as needed
+            });
+        </script>
+    </body>
+    
+<script>
+    var sidemenu = document.getElementById("sidemenu");
+    var body = document.body;
+    var overlay = document.getElementById("overlay");
+    function openmenu(){
+        sidemenu.style.left = "0";
+        body.style.overflow = "hidden"; // Disable scrolling
+        overlay.style.display = "block"; // Show overlay
+    }
+    function closemenu(){
+        sidemenu.style.left = "-200px";
+        body.style.overflow = "auto"; // Restore scrolling
+        overlay.style.display = "none"; // Hide overlay
+    }
+
+</script>
+
+</body>
+</html>
