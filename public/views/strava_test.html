@@ -29,52 +29,60 @@
         <i class="fas fa-bars" onclick="openmenu()"></i>
     </nav>
 
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>D3 Map Visualization</title>
-    <script src="https://d3js.org/d3.v7.min.js"></script>
-    <style>
-        /* Define CSS styles for the map */
-        svg {
-            background-color: #f0f0f0;
-        }
-        .point {
-            fill: steelblue;
-            stroke: #fff;
-            stroke-width: 1.5px;
-        }
-    </style>
-</head>
-
-<body>
-    <svg width="960" height="600"></svg>
-
-    <script>
-        // Load CSV data
-        d3.csv("../data/strava_ride_details.csv").then(function(data) {
-            // Define projection
-            var projection = d3.geoMercator()
-                .center([0, 0]) // Center the map
-                .scale(100) // Adjust the scale as needed
-                .translate([480, 300]); // Translate to center of SVG element
-
-            // Create SVG element
-            var svg = d3.select("svg");
-
-            // Plot data points
-            svg.selectAll(".point")
-                .data(data)
-                .enter().append("circle")
-                .attr("class", "point")
-                .attr("cx", function(d) { return projection([d.lng, d.lat])[0]; })
-                .attr("cy", function(d) { return projection([d.lng, d.lat])[1]; })
-                .attr("r", 5) // Adjust circle radius as needed
-                .append("title")
-                .text(function(d) { return "Name: " + d.name + "\nTime: " + d.time + "\nAltitude: " + d.altitude; });
-        });
-    </script>
-</body>
+<!--- d3 content -->
+    <head>
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <title>D3 Map Visualization</title>
+        <script src="https://d3js.org/d3.v7.min.js"></script>
+        <style>
+            /* Define CSS styles for the map */
+            svg {
+                margin-left: 10%;
+                background-color: #f0f0f0;
+                width: 80%; /* Set SVG width to 100% of the viewport width */
+                height: 100vh; /* Set SVG height to 100% of the viewport height */
+            }
+            .point {
+                fill: yellow;
+                stroke: #bd1b1b;
+                stroke-width: 0.2px;
+                opacity: 80%;
+            }
+            .boundary {
+            fill: none;
+            stroke: #000;
+            stroke-width: 1;
+            }
+        </style>
+    </head>
+    <body>
+        <svg></svg>
+    
+        <script>
+            // Load CSV data
+            d3.csv("../data/strava_ride_details.csv").then(function(data) {
+                // Set up map projection
+                const projection = d3.geoMercator()
+                    .center([-0.131908, 51.460591])
+                    .scale(100000)
+                    .translate([window.innerWidth / 2, window.innerHeight / 2]);
+    
+                // Create SVG element
+                const svg = d3.select("svg");
+                // Plot data points
+                svg.selectAll(".point")
+                    .data(data)
+                    .enter().append("circle")
+                    .attr("class", "point")
+                    .attr("cx", function(d) { return projection([+d.lng, +d.lat])[0]; })
+                    .attr("cy", function(d) { return projection([+d.lng, +d.lat])[1]; })
+                    .attr("r", 3);
+            }).catch(function(error) {
+                console.error("Error loading data:", error);
+            });
+        </script>
+    </body>
 
 <!--- socials page -->
 <div id = "services">
@@ -115,7 +123,6 @@
         body.style.overflow = "auto"; // Restore scrolling
         overlay.style.display = "none"; // Hide overlay
     }
-
 </script>
 
 </body>
