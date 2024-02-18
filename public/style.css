@@ -4,6 +4,13 @@
     font-family: 'Poppings', sans-serif;
     box-sizing: border-box;
 }
+#map {
+    position: absolute;
+    top: 0;
+    bottom: 0;
+    width: 100%;
+  }
+
 body{
     background: #0b121b;
     color: #fff;
