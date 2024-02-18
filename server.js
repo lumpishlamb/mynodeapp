@@ -30,7 +30,7 @@ app.get('/product_1', (req, res) => {
 });
 
 app.get('/product_2', (req, res) => {
-  res.sendFile(path.join(__dirname, 'public/views', 'product_2].html'));
+  res.sendFile(path.join(__dirname, 'public/views', 'product_2.html'));
 });
 
 
