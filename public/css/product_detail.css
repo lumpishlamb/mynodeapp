@@ -86,3 +86,95 @@
 .buy-now-btn:hover {
     background-color: #ddb347; /* Darker shade of yellow on hover */
 }
+
+@media only screen and (max-width: 600px) {
+    .product-thumbnails {
+        display: flex;
+        flex-direction: row; /* Stack thumbnails vertically */
+        margin-bottom: 10px;
+    }
+    
+    .product-thumbnails img {
+        max-width: 23%;
+        height: auto;
+        margin-right: 6%;
+        margin-bottom: 2px; /* Add margin between thumbnails */
+        cursor: pointer;
+    }
+    
+    /* CSS for the main product image and information */
+    .product {
+        display: block;
+    }
+    
+    .product-images {
+        margin-right: 0px;
+    }
+    
+    .product-info {
+        color:#111;
+        font-size: 11px;
+        padding-bottom: 10%;
+    }
+    
+    .product-info h1 {
+        margin-top: 5%;
+        font-size: 16px;
+    }
+    
+    .product-name-divider {
+        height: 1px;
+        background-color: #ccc;
+        margin-top: 2%;
+        margin-bottom: 2%;
+    }
+    
+    .product-price {
+        font-size: 20px;
+        color: #c45500; /* Amazon's orange color */
+        margin-bottom: 10px;
+    }
+    
+    .buy-now-container {
+        display: flex;
+        flex-direction: column;
+        align-items: center; /* Center content horizontally */
+        margin-left: 9vw;
+        width: 40vw; /* Adjust width to fit content */
+        height: 28vh;
+        box-sizing: border-box;
+        border: 1px solid #ccc; /* Add grey outline */
+        color: #111;
+        margin-bottom: 8%;
+    }
+    .buy-now-info {
+        padding-top: 5%;
+        font-size: 10px;
+        margin: 10px; /* Add space between info and button */
+    }
+    
+    .buy-now-btn {
+        background-color: #f0c14b; /* Amazon's yellow color */
+        color: #111;
+        padding: 5px 15px;
+        font-size: 11px;
+        border: none;
+        border-radius: 3px;
+        cursor: pointer;
+    }
+    
+    
+    li {
+        margin-bottom: 10px; /* Add bottom margin to create space between list items */
+        padding-left: 1em; /* Add left padding to adjust for the bullet point */
+        text-indent: -1em; /* Align text with the left edge of the list marker */
+    }
+    
+    li:before {
+        color: #000; /* Set the color of the bullet point */
+        display: inline-block; /* Ensure the bullet point is treated as an inline element */
+        width: 1em; /* Set width to ensure consistent spacing with the text */
+        margin-left: -1em; /* Align the bullet point with the left edge of the list item */
+    }
+
+}
