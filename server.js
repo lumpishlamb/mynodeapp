@@ -1,3 +1,8 @@
+import Map from 'ol/Map.js';
+import OSM from 'ol/source/OSM.js';
+import TileLayer from 'ol/layer/Tile.js';
+import View from 'ol/View.js';
+
 const express = require('express');
 const path = require('path');
 
@@ -26,12 +31,6 @@ app.get('/strava_test', (req, res) => {
 app.listen(port, () => {
   console.log(`Server listening on port ${port}`);
 });
-
-
-import Map from 'ol/Map.js';
-import OSM from 'ol/source/OSM.js';
-import TileLayer from 'ol/layer/Tile.js';
-import View from 'ol/View.js';
 
 const map = new Map({
   layers: [
