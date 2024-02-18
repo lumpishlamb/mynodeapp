@@ -246,51 +246,28 @@
         <button id="zoom-in">Zoom in</button>
 
 <!-- Second test -->
-<script type="module" src="../../maps.js"></script>
-      </body>
+<head>
+    <meta charset="UTF-8">
+    <title>d3 Integration</title>
+    <link rel="stylesheet" href="node_modules/ol/ol.css">
+    <style>
+      .map {
+        width: 100%;
+        height: 400px;
+      }
+      path.boundary {
+        fill: none;
+        stroke: #777;
+      }
+    </style>
+  </head>
+  <body>
+    <div id="map" class="map"></div>
 
-      <head>
-        <meta charset="UTF-8">
-        <title>OpenLayers Street Map</title>
-        <!-- Include OpenLayers CSS -->
-        <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/ol@6.5.0/dist/ol.css" type="text/css">
-        <!-- Define styles for the map container -->
-        <style>
-          #map {
-            width: 100%;
-            height: 400px;
-          }
-        </style>
-      </head>
-      <body>
-        <!-- HTML container for the map -->
-        <div id="map"></div>
-      
-        <!-- Include OpenLayers library -->
-        <script src="https://cdn.jsdelivr.net/npm/ol@6.5.0/dist/ol.js"></script>
-      
-        <!-- JavaScript to initialize the map -->
-        <script>
-          // Initialize the map
-          var map = new ol.Map({
-            // Target the map container defined in the HTML
-            target: 'map',
-            // Define map layers
-            layers: [
-              // OpenStreetMap base layer
-              new ol.layer.Tile({
-                source: new ol.source.OSM()
-              })
-            ],
-            // Define map view
-            view: new ol.View({
-              center: ol.proj.fromLonLat([0, 0]), // Center the map at [0, 0]
-              zoom: 2 // Set initial zoom level
-            })
-          });
-        </script>
-      </body>
-
+    <script src="https://cdn.jsdelivr.net/npm/d3@7.4.4/dist/d3.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/topojson@3.0.2/dist/topojson.js"></script>
+    <script type="module" src="../../main.js"></script>
+  </body>
       
 
 </html>
