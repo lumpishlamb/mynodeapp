@@ -22,11 +22,11 @@ app.get('/strava_test', (req, res) => {
 });
 
 app.get('/product_search', (req, res) => {
-  res.sendFile(path.join(__dirname, 'public/views', 'product_search].html'));
+  res.sendFile(path.join(__dirname, 'public/views', 'product_search.html'));
 });
 
 app.get('/product_1', (req, res) => {
-  res.sendFile(path.join(__dirname, 'public/views', 'product_1].html'));
+  res.sendFile(path.join(__dirname, 'public/views', 'product_1.html'));
 });
 
 app.get('/product_2', (req, res) => {
