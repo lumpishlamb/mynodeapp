@@ -1,0 +1,88 @@
+/* CSS for the product thumbnails */
+.above-the-fold{
+    padding-left: 20%;
+    padding-right: 20%;;
+    padding-top: 25px;
+    padding-bottom: 3%;
+    background-color: #ffffff;
+    justify-content: center;
+}
+
+.product-thumbnails {
+    display: flex;
+    flex-direction: column; /* Stack thumbnails vertically */
+    margin-bottom: 20px;
+    margin-right: 20px; /* Add dynamic spacing between thumbnails and main image */
+}
+
+.product-thumbnails img {
+    max-width: 100%;
+    height: auto;
+    margin-bottom: 35%; /* Add margin between thumbnails */
+    cursor: pointer;
+}
+
+/* CSS for the main product image and information */
+.product {
+    display: flex;
+}
+
+.product-images {
+    margin-right: 20px; /* Add some distance between the main image and the written content */
+}
+
+.product-images img {
+    max-width: 100%;
+    height: auto;
+}
+
+.product-info {
+    color:#111;
+    font-size: 13px;
+}
+
+.product-info h1 {
+    font-size: 24px;
+}
+
+.product-name-divider {
+    height: 1px;
+    background-color: #ccc;
+    margin-top: 20px;
+}
+
+.product-price {
+    font-size: 20px;
+    color: #c45500; /* Amazon's orange color */
+    margin-bottom: 10px;
+}
+
+.buy-now-container {
+    margin-left: 5%;
+    box-sizing: border-box;
+    margin-right: 0; /* Reset margin-right */
+    border: 1px solid #ccc; /* Add grey outline */
+    color: #111;
+    height: auto;
+    width: 180px; /* Adjust width to fit content */
+}
+
+.buy-now-info {
+    padding-top: 35%;
+    font-size: 11px;
+    margin: 10px; /* Add space between info and button */
+}
+
+.buy-now-btn {
+    background-color: #f0c14b; /* Amazon's yellow color */
+    color: #111;
+    padding: 5px 15px;
+    font-size: 12px;
+    border: none;
+    border-radius: 3px;
+    cursor: pointer;
+}
+
+.buy-now-btn:hover {
+    background-color: #ddb347; /* Darker shade of yellow on hover */
+}

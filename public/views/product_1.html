@@ -1,0 +1,76 @@
+<!DOCTYPE html>
+<html lang="en">
+
+ <!-- Header content tc.(logo, navigation, e) -->
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>L - Product Details</title>
+    <link rel="icon" type="image/png" href="../images/favicon.png">
+    <link rel="stylesheet" href="../css/style.css">
+    <link rel="stylesheet" href="../css/product_detail.css">
+    <script src="../scripts/product_detail.js" defer></script> <!-- Add script.js -->
+</head>
+
+<body>
+    <div id="header-placeholder"></div>
+    <!-- Your page content here -->
+    <script>
+        fetch('../header.html')
+            .then(response => response.text())
+            .then(data => {
+                document.getElementById('header-placeholder').innerHTML = data;
+            });
+    </script>
+
+    <main>
+        <div class = "above-the-fold">  
+            <div class="product">
+                <div class="product-thumbnails">
+                    <!-- Placeholder thumbnail images -->
+                    <img src="https://via.placeholder.com/80x80/FF0000" alt="Red Thumbnail" data-src="https://via.placeholder.com/400x400/FF0000">
+                    <img src="https://via.placeholder.com/80x80/00FF00" alt="Green Thumbnail" data-src="https://via.placeholder.com/400x400/00FF00">
+                    <img src="https://via.placeholder.com/80x80/0000FF" alt="Blue Thumbnail" data-src="https://via.placeholder.com/400x400/0000FF">
+                    <img src="https://via.placeholder.com/80x80/FFFF00" alt="Yellow Thumbnail" data-src="https://via.placeholder.com/400x400/FFFF00">
+                </div>
+                <div class="product-images">
+                    <!-- Main product image -->
+                    <img id="main-image" src="https://via.placeholder.com/400x400" alt="Product Image">
+                </div>
+
+                <div class="product-info">
+                    <h1 class="product-name">Product Name</h1>
+                    <div class="product-name-divider"></div> <!-- Grey line -->
+                    <p class="product-price">$XX.XX</p>
+                    <p class="product-description">
+                            <li>Get two slices of bread.</li>
+                            <li>Add your favorite spread (e.g., mayonnaise, mustard).</li>
+                            <li>Add your desired fillings (e.g., cheese, lettuce, tomato).</li>
+                            <li>Place the second slice of bread on top.</li>
+                            <li>Cut the sandwich in half if desired.</li>
+                    </p>
+                </div>
+                
+                <div class="buy-now-container">
+                    <div class="buy-now-info">
+                        <p>Buy new:</p>
+                        <p>£0.00</p>
+                        <p>Fast Delivery</p>
+                        <p>Quantity: 1<br><br></p>
+                        <button class="buy-now-btn">View Now</button>
+                        <p><br><br>Dispatches from Latent-Lamb</p>
+                        <p>Free from Latent-Lamb</p>
+                    </div>
+                </div>
+            </div>
+            <div class="product-name-divider"></div> <!-- Grey line -->
+        </div>
+
+       
+    </main>
+
+
+
+
+</body>
+</html>
