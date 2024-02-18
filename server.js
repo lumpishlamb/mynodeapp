@@ -1,36 +1,41 @@
-const express = require('express');
+const http = require('http');
+const fs = require('fs');
 const path = require('path');
 
+const server = http.createServer((req, res) => {
+    let filePath = '.' + req.url;
+    if (filePath === './') {
+        filePath = './index.html';
+    }
 
-const app = express();
-const port = 3000;
+    const extname = String(path.extname(filePath)).toLowerCase();
+    const contentType = {
+        '.html': 'text/html',
+        '.js': 'text/javascript',
+        '.css': 'text/css',
+        // Add more content types as needed
+    }[extname] || 'application/octet-stream';
 
-// Serve static files from the 'public' directory
-app.use(express.static(path.join(__dirname, 'public')));
-
-// Set up a route for the home page
-app.get('/', (req, res) => {
-  res.sendFile(path.join(__dirname, 'public', 'index.html'));
+    fs.readFile(filePath, (err, content) => {
+        if (err) {
+            if (err.code === 'ENOENT') {
+                // Page not found
+                res.writeHead(404);
+                res.end('404 Not Found');
+            } else {
+                // Server error
+                res.writeHead(500);
+                res.end('500 Internal Server Error');
+            }
+        } else {
+            // Serve the file
+            res.writeHead(200, { 'Content-Type': contentType });
+            res.end(content, 'utf-8');
+        }
+    });
 });
 
-app.get('/page1', (req, res) => {
-  res.sendFile(path.join(__dirname, 'public/views', 'page1.html'));
+const port = process.env.PORT || 3000;
+server.listen(port, () => {
+    console.log(`Server running on port ${port}`);
 });
-
-
-// Start the server
-app.listen(port, () => {
-  console.log(`Server listening on port ${port}`);
-});
-
-// in lightsail 
-
-// ls  then cd into htdocs
-// g to clear everythin
-// git clone <repo-link>
-// npm instlal 
-
-// in case of error where port is used. 
-// sudo netstat -tulpn | grep :3000
-// node server.js -- to test
-// f -- to go live
