@@ -60,7 +60,8 @@ nav{
     color: #ffffff; /* Adjust the text color as needed */
 }
 .logo{
-    width: 120px;
+    width: auto;
+    height: 37px;
     margin-left: 2.5%;
     padding-top: 3px;
     padding-bottom: 1.5px;
