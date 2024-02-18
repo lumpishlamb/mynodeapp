@@ -11,15 +11,6 @@
 </head>
 <body>
     <div id="header-placeholder"></div>
-    <!-- Your page content here -->
-    <script>
-        fetch('../header.html')
-            .then(response => response.text())
-            .then(data => {
-                document.getElementById('header-placeholder').innerHTML = data;
-            });
-    </script>
-
     <div class="container">
         <h6>'Data Visualisation' Search Results</h6>
         <br>
@@ -62,6 +53,21 @@
         </div>
     </div>
 
+<script>
+    fetch('../header.html')
+        .then(response => response.text())
+        .then(data => {
+            document.getElementById('header-placeholder').innerHTML = data;
+        })
+        .then(() => {
+            // Load your script after the header content is loaded
+            const script = document.createElement('script');
+            script.src = '../scripts/header.js';
+            document.body.appendChild(script);
+        });
+</script>
+
+    
 </body>
 </html>
 

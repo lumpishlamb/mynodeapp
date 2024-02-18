@@ -33,16 +33,7 @@
 
     <body>
         <div id="header-placeholder"></div>
-        <!-- Your page content here -->
-        <script>
-            fetch('../header.html')
-                .then(response => response.text())
-                .then(data => {
-                    document.getElementById('header-placeholder').innerHTML = data;
-                });
-        </script>
         <svg></svg>
-    
         <script>
             // Load CSV data
             d3.csv("../data/strava_ride_details.csv").then(function(data) {
@@ -96,19 +87,17 @@
 </div>
     
 <script>
-    var sidemenu = document.getElementById("sidemenu");
-    var body = document.body;
-    var overlay = document.getElementById("overlay");
-    function openmenu(){
-        sidemenu.style.left = "0";
-        body.style.overflow = "hidden"; // Disable scrolling
-        overlay.style.display = "block"; // Show overlay
-    }
-    function closemenu(){
-        sidemenu.style.left = "-200px";
-        body.style.overflow = "auto"; // Restore scrolling
-        overlay.style.display = "none"; // Hide overlay
-    }
+    fetch('../header.html')
+        .then(response => response.text())
+        .then(data => {
+            document.getElementById('header-placeholder').innerHTML = data;
+        })
+        .then(() => {
+            // Load your script after the header content is loaded
+            const script = document.createElement('script');
+            script.src = '../scripts/header.js';
+            document.body.appendChild(script);
+        });
 </script>
 
 </body>

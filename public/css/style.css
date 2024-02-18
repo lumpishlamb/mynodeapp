@@ -355,7 +355,7 @@ nav .fas{
         font-size: 2.5rem; /* Changed to rem */
     }
         #header {
-        background-image: url(images/phone-background.png);
+        background-image: url(../images/phone-background.png);
     }
     .header-text {
         margin-top: 50%;
