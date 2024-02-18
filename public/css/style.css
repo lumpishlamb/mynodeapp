@@ -34,6 +34,13 @@ body{
     height: auto; /* Adjust as needed */
     overflow: hidden; /* This can help contain floated elements */
 }
+.footer-container{
+    padding: 10px 10%;
+    width: 100%;
+    height: auto; /* Adjust as needed */
+    overflow: hidden; /* This can help contain floated elements */
+}
+
 nav{
     padding-left: 2.5%;
     display: flex;
@@ -173,17 +180,17 @@ nav ul li a:hover::after{
     display: block;}
 
 /* --- services --- */
-#services{
+#socials{
     padding: 10px 0;
     background-color: #131a22;
 }
-.services-list{
+.socials-list{
     display: grid;
     grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
     grid-gap:15px;
     margin-top:10px;
 }
-.services-list div{
+.socials-list div{
     background: #262626;
     padding: 20px;
     font-size: 12px;
@@ -191,23 +198,23 @@ nav ul li a:hover::after{
     border-radius: 10px;
     transition: background 0.25s, transform 0.25s;
 }
-.services-list div i{
+.socials-list div i{
     font-size: 20px;
     margin-bottom: 10px;
 }
-.services-list div span{
+.socials-list div span{
     font-size: 20px;
     font-weight: 500;
     margin-bottom: 5px;
 }
-.services-list div a{
+.socials-list div a{
     text-decoration: none;
     color:#fff;
     font-size: 12px;
     margin-top: 0px;
     display: inline-block;
 }
-.services-list div:hover{
+.socials-list div:hover{
     background: #e18910;
     transform: translateY(-10px);
 }

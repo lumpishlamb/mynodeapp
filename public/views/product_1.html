@@ -10,6 +10,7 @@
     <link rel="stylesheet" href="../css/style.css">
     <link rel="stylesheet" href="../css/product_detail.css">
     <script src="../scripts/product_detail.js" defer></script> <!-- Add script.js -->
+    <script src="https://kit.fontawesome.com/3150d9fea2.js" crossorigin="anonymous"></script>
 </head>
 
 <body>
@@ -57,6 +58,7 @@
             <div class="product-name-divider"></div> <!-- Grey line -->
         </div>
     </main>
+    <div id="footer-placeholder"></div>
 
 <script>
     fetch('../header.html')
@@ -72,6 +74,13 @@
         });
 </script>
 
+<script>
+    fetch('../footer.html')
+        .then(response => response.text())
+        .then(data => {
+            document.getElementById('footer-placeholder').innerHTML = data;
+        });
+</script>
 
 </body>
 </html>

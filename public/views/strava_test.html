@@ -34,57 +34,32 @@
     <body>
         <div id="header-placeholder"></div>
         <svg></svg>
-        <script>
-            // Load CSV data
-            d3.csv("../data/strava_ride_details.csv").then(function(data) {
-                // Set up map projection
-                const projection = d3.geoMercator()
-                    .center([-0.131908, 51.460591])
-                    .scale(100000)
-                    .translate([window.innerWidth / 2, window.innerHeight / 2]);
-    
-                // Create SVG element
-                const svg = d3.select("svg");
-                // Plot data points
-                svg.selectAll(".point")
-                    .data(data)
-                    .enter().append("circle")
-                    .attr("class", "point")
-                    .attr("cx", function(d) { return projection([+d.lng, +d.lat])[0]; })
-                    .attr("cy", function(d) { return projection([+d.lng, +d.lat])[1]; })
-                    .attr("r", 3);
-            }).catch(function(error) {
-                console.error("Error loading data:", error);
-            });
-        </script>
+            <script>
+                // Load CSV data
+                d3.csv("../data/strava_ride_details.csv").then(function(data) {
+                    // Set up map projection
+                    const projection = d3.geoMercator()
+                        .center([-0.131908, 51.460591])
+                        .scale(100000)
+                        .translate([window.innerWidth / 2, window.innerHeight / 2]);
+        
+                    // Create SVG element
+                    const svg = d3.select("svg");
+                    // Plot data points
+                    svg.selectAll(".point")
+                        .data(data)
+                        .enter().append("circle")
+                        .attr("class", "point")
+                        .attr("cx", function(d) { return projection([+d.lng, +d.lat])[0]; })
+                        .attr("cy", function(d) { return projection([+d.lng, +d.lat])[1]; })
+                        .attr("r", 3);
+                }).catch(function(error) {
+                    console.error("Error loading data:", error);
+                });
+            </script>
+            <div id="footer-placeholder"></div>
     </body>
 
-
-
-<!--- socials page -->
-<div id = "services">
-    <div class= "container">
-        <div class = "services-list">
-            <div>
-                <a href="https://github.com/lumpishlamb"><i class="fa-brands fa-github"></i><span> : Github</span></a>
-                <p>I upload code via the GitHub GUI.</p>
-            </div>
-            <div>
-                <a href="https://www.linkedin.com/in/lam-%F0%9F%8D%83-0b5bb2150/"><i class="fa-brands fa-linkedin-in"></i><span> : LinkedIn</span></a>
-                <p>Endorse for endorse?</p>
-            </div>
-            <div>
-                <a href="https://www.strava.com/athletes/1278599"><i class="fa-brands fa-strava"></i><span> : Strava</span></a>
-                <p>Watch me ride my bike</p>
-            </div>
-            <div>
-                <a href="https://www.instagram.com/latentlamb/"><i class="fa-brands fa-instagram"></i><span> : Instagram</span></a>
-                <p>I won't follow you back.</p>
-            </div>            
-
-        </div>
-    </div>
-</div>
     
 <script>
     fetch('../header.html')
@@ -97,6 +72,14 @@
             const script = document.createElement('script');
             script.src = '../scripts/header.js';
             document.body.appendChild(script);
+        });
+</script>
+
+<script>
+    fetch('../footer.html')
+        .then(response => response.text())
+        .then(data => {
+            document.getElementById('footer-placeholder').innerHTML = data;
         });
 </script>
 
