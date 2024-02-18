@@ -22,8 +22,8 @@
             <li> </li>
             <li><a href="/">Home</a></li>
             <li><a href="/strava_test">Portfolio</a></li>
-            <li><a href="/page1">About</a></li>
-            <li><a href="#">Socials</a></li>
+            <li><a href="/#about">About</a></li>
+            <li><a href="/page1">Socials</a></li>
             <i class="fas fa-circle-xmark" onclick="closemenu()"></i>
         </ul>
         <i class="fas fa-bars" onclick="openmenu()"></i>
@@ -84,73 +84,7 @@
         </script>
     </body>
 
-    <head>
-        <meta charset="UTF-8">
-        <title>OpenLayers with D3.js</title>
-        <style>
-          #map {
-            width: 100%;
-            height: 400px;
-          }
-        </style>
-        <!-- Import OpenLayers -->
-        <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/ol@6.5.0/dist/ol.css" type="text/css">
-        <script src="https://cdn.jsdelivr.net/npm/ol@6.5.0/dist/ol.js"></script>
-        <!-- Import D3.js -->
-        <script src="https://d3js.org/d3.v7.min.js"></script>
-      </head>
-      <body>
-        <div id="map"></div>
-      
-        <script>
-          // Initialize OpenLayers map
-          var map = new ol.Map({
-            target: 'map',
-            layers: [
-              new ol.layer.Tile({
-                source: new ol.source.OSM()
-              })
-            ],
-            view: new ol.View({
-              center: ol.proj.fromLonLat([0, 0]),
-              zoom: 2
-            })
-          });
-      
-          // Example data for markers
-          var data = [
-            { lat: 40.7128, lon: -74.0060, name: 'New York' },
-            { lat: 34.0522, lon: -118.2437, name: 'Los Angeles' },
-            { lat: 51.5074, lon: -0.1278, name: 'London' }
-            // Add more data as needed
-          ];
-      
-          // Create a layer for D3 overlay
-          var vectorLayer = new ol.layer.Vector({
-            source: new ol.source.Vector()
-          });
-          map.addLayer(vectorLayer);
-      
-          // Use D3 to add markers to the OpenLayers map
-          d3.select("#map")
-            .selectAll("svg")
-            .data(data)
-            .enter()
-            .append("svg")
-            .attr("class", "marker")
-            .style("position", "absolute")
-            .style("transform", function(d) {
-              var coords = ol.proj.fromLonLat([d.lon, d.lat]);
-              var px = map.getPixelFromCoordinate(coords);
-              return "translate(" + px[0] + "px, " + px[1] + "px)";
-            })
-            .append("circle")
-            .attr("r", 5)
-            .style("fill", "red");
-      
-        </script>
-      </body>
-      </html>
+
 
 <!--- socials page -->
 <div id = "services">
